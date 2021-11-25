@@ -5,14 +5,15 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public int score;
-    public float ball_time;
     public GameObject original_ball;
     public bool game_started;
+    public int score;
     public int ball_count;
+    public float ball_time;
 
     float init_time;
     float now_time;
+    float min_time;
 
     void Awake()
     {
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour
         init_time = Time.time;
         game_started = false;
         ball_count = 0;
+        min_time = 1f;
+        ball_time = 3f;
     }
 
     void Update()
@@ -34,6 +37,8 @@ public class GameManager : MonoBehaviour
                 ball_count++;
                 Instantiate(original_ball);
                 init_time = now_time;
+                if (ball_time > min_time)
+                    ball_time -= 0.25f;
             }
         }
     }

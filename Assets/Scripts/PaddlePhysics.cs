@@ -13,7 +13,7 @@ public class PaddlePhysics : MonoBehaviour
         isMovingLeft = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Check if game has started
         if (GameManager.instance.game_started)
@@ -35,6 +35,7 @@ public class PaddlePhysics : MonoBehaviour
     {
         Rigidbody2D ball = other.attachedRigidbody;
         bool good = other.gameObject.GetComponent<BallController>().good;
+        bool lost = other.gameObject.GetComponent<BallController>().lost;
         if (ball != null)
         {
             // Remove ball from existence
@@ -43,10 +44,15 @@ public class PaddlePhysics : MonoBehaviour
             Destroy(other);
 
             // Add points or end game
-            if (good)
-                GameManager.instance.score += 1;
-            else
-                game_over.EndGame();
+            if (!lost)
+            {
+                if (good)
+                    GameManager.instance.score += 1;
+                else if (!good)
+                    game_over.EndGame();
+            }
+
+            other.gameObject.GetComponent<BallController>().lost = true;
         }
     }
 }

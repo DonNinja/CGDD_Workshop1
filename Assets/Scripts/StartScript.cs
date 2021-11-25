@@ -19,6 +19,7 @@ public class StartScript : MonoBehaviour
         gm.game_started = false;
         gm.ball_count = 0;
         gm.score = 0;
+        gm.ball_time = 3f;
         gameObject.SetActive(true);
     }
 

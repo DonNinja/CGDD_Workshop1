@@ -844,7 +844,7 @@ AudioSource:
   MinDistance: 12.1915045
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1029,7 +1029,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 204.95
+  m_fontSize: 274.75
   m_fontSizeBase: 249.69
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1431,7 +1431,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5.2994356
+  orthographic size: 5.2449408
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1580,10 +1580,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 742e29c93920dba4895443e17f4bc95a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
-  ball_time: 3
   original_ball: {fileID: 4998815521190606427, guid: 140327f80eabea8409a97ff06a8fdffe, type: 3}
   game_started: 0
+  score: 0
   ball_count: 0
 --- !u!4 &1461759115
 Transform:
@@ -2314,7 +2313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb829847891b65488a4aeccad028d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movSpeed: 90
+  movSpeed: 120
   movingLeft: 0
 --- !u!4 &2024060785
 Transform:
